@@ -1,4 +1,4 @@
-#include <monty.h>
+#include "monty.h"
 
 /*
  * exec_it - executes the opcode given
@@ -11,7 +11,7 @@
 
 int exec_it(char *subject, stack_t **heap, unsigned int tally, FILE *fle)
 {
-	instructions_t opc[] = {
+	instruction_t opc[] = {
 				{"push", push_it}, {"pall", pall_it},
 				{"pint", pint_it}, {"pop", pop_it},
 				{"swap", swap_it}, {"add", add_it},
@@ -23,7 +23,7 @@ int exec_it(char *subject, stack_t **heap, unsigned int tally, FILE *fle)
 	opd = strtok(subject, " \n\t");
 	if (opd && opd[0] == '#')
 		return (0);
-	bus.name = strtok(NULL, " \n\t");
+	ela.name = strtok(NULL, " \n\t");
 	while (opc[k].opcode && opd)
 	{
 		if (strcmp(opd, opc[k].opcode) == 0)

@@ -3,8 +3,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <sys/types.h>
 #include <unistd.h>
+#include <fcntl.h>
+#include <string.h>
 #include <ctype.h>
 
 /**
@@ -61,8 +63,8 @@ void add_it(stack_t **head, unsigned int line_n);
 void do_nada(stack_t **head, unsigned int line_n);
 void add_nodeit(stack_t **head, int n);
 void free_it(stack_t *head);
-void pall_it(stack_t **head);
-void pint_it(stack_t **head, unsigned int cnt);
+void pall_it(stack_t **head, unsigned int line_n);
+void pint_it(stack_t **head, unsigned int line_n);
 void pop_it(stack_t **head, unsigned int line_n);
 void push_it(stack_t **head, unsigned int line_n);
 void swap_it(stack_t **head, unsigned int line_n);

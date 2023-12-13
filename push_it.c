@@ -17,9 +17,9 @@ void push_it(stack_t **head, unsigned int line_n)
 		for ( ; ela.name[x] != '\0'; x++)
 		{
 			if (ela.name[x] > 57 || ela.name[x] < 48)
-				x = 1;
+				y = 1;
 		}
-		if (x == 1)
+		if (y == 1)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", line_n);
 			fclose(ela.fl);
@@ -27,8 +27,10 @@ void push_it(stack_t **head, unsigned int line_n)
 			free_it(*head);
 			exit(EXIT_FAILURE);
 		}
-		i = atoi(ela.name);
 		else
+		{
+			i = atoi(ela.name);
 			add_nodeit(head, i);
+		}
 	}
 }

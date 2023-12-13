@@ -1,7 +1,5 @@
 #include "monty.h"
 
-elaa ela = {NULL, NULL, NULL, 0}
-
 /**
  * main - entry point for mcode interpreter
  * @argc: number of args
@@ -9,38 +7,35 @@ elaa ela = {NULL, NULL, NULL, 0}
  * Return: 0 for success
  */
 
-int main( int argc, char char**argv)
+elaa ela = {NULL, NULL, NULL};
+
+int main(int argc, char **argv)
 {
-	size_t size = 0;
-	ssize_t buffer = 1;
+	char buffer[256];
 	stack_t *heap = NULL;
 	unsigned int tally = 0;
 	char *subject;
 	FILE *fle;
-
+	
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		exit(EXIT_FAILURE):
+		exit(EXIT_FAILURE);
 	}
 
 	fle= fopen(argv[1], "r");
-	bus.fl = fle;
+	ela.fl = fle;
 	if (!fle)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (buffer > 0)
+	while (fgets(buffer, sizeof(buffer), fle) != NULL)
 	{
-		subject = NULL;
-		buffer = getline(&subject, &size, fle);
-		bus.buff = subject;
+		subject = fgets(buffer, sizeof(buffer), fle);
+		ela.buff = subject;
 		tally++;
-		if (buffer > 0)
-		{
-			exec_it(subject, &heap, tally, fle);
-		}
+		exec_it(subject, &heap, tally, fle);
 		free(subject);
 	}
 	free_it(heap);

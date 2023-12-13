@@ -1,4 +1,4 @@
-#include <monty.h>
+#include "monty.h"
 
 /**
  * pall_it - prints stack
@@ -6,16 +6,18 @@
  * Return: none
  */
 
-void pall_it(stack_t **head)
+void pall_it(stack_t **head, unsigned int line_n)
 {
-	stack_t *tem;
+	stack_t *temp;
 
-	tem = *head;
-	if (tem == NULL)
+	(void)line_n;
+
+	temp = *head;
+	if (temp == NULL)
 		return;
-	while (tem)
+	while (temp)
 	{
-		printf("%d\n", tem->n)
-		tem = tem->next;
+		printf("%d\n", temp->n);
+		temp = temp->next;
 	}
 }

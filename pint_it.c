@@ -1,4 +1,4 @@
-#include <main.h>
+#include "monty.h"
 
 /**
  * pint_it - prints the top

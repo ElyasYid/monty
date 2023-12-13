@@ -10,18 +10,17 @@
 void swap_it(stack_t **head, unsigned int line_n)
 {
 	stack_t *temp;
-	int x = 0:
-	int swapped;
+	int x = 0, swapped;
 
 	temp = *head;
 	while (temp)
 	{
-		tem = temp->next;
+		temp = temp->next;
 		x++;
 	}
-	if (temp < 2)
+	if (x < 2)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", lin_n);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_n);
 		fclose(ela.fl);
 		free(ela.buff);
 		free_it(*head);
