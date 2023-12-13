@@ -24,7 +24,7 @@ void add_it(stack_t **head, unsigned int line_n)
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_n);
 		fclose(ela.file);
 		free(ela.buffer);
-		free_stack(*head);
+		free_it(*head);
 		exit(EXIT_FAILURE);
 	}
 	temp = *head;

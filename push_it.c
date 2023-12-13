@@ -2,17 +2,16 @@
 /**
  * push_it - add data to stack
  * @head: head of stack
- * @counter: line number
+ * @line_n: line number
  * Return: nothing
  */
 
-void push_it(stack_t **head, unsigned int cnt)
+void push_it(stack_t **head, unsigned int line_n)
 {
 	int i, x = 0, y = 0;
 
 	if (ela.name)
 	{
-
 		if (ela.name[0] == '-')
 			x++;
 		for ( ; ela.name[x] != '\0'; x++)
@@ -22,12 +21,14 @@ void push_it(stack_t **head, unsigned int cnt)
 		}
 		if (x == 1)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", cnt);
+			fprintf(stderr, "L%d: usage: push integer\n", line_n);
 			fclose(ela.fl);
 			free(ela.buff);
+			free_it(*head);
 			exit(EXIT_FAILURE);
 		}
 		i = atoi(ela.name);
 		else
-			addtop(head, i);
+			add_nodeit(head, i);
 	}
+}

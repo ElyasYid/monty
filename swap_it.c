@@ -21,10 +21,10 @@ void swap_it(stack_t **head, unsigned int line_n)
 	}
 	if (temp < 2)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", len_n);
-		fclose(ela.file);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", lin_n);
+		fclose(ela.fl);
 		free(ela.buff);
-		free_stack(*head);
+		free_it(*head);
 		exit(EXIT_FAILURE);
 	}
 	temp = *head;

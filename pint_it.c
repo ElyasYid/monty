@@ -3,18 +3,18 @@
 /**
  * pint_it - prints the top
  * @head: head of the stack
- * @counter: line number
+ * @line_n: line number
  * Return: none
  */
 
-void pint_it(stack_t **head, unsigned int cnt)
+void pint_it(stack_t **head, unsigned int line_n)
 {
 	if (*head == NULL)
 	{
-		fprintf(stderr, "L%u: can't pint, stack empty\n", cnt);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_n);
 		fclose(ela.file);
 		free(ela.buff);
-		free_stack(*head);
+		free_it(*head);
 		exit(EXIT_FAILURE);
 	}
 

@@ -7,7 +7,7 @@
  * Return: No
  */
 
-void addtop(stack_t **head, int n)
+void add_nodeit(stack_t **head, int n)
 {
 	stack_t *new, *temp;
 
