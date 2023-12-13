@@ -36,7 +36,6 @@ int main(int argc, char **argv)
 		ela.buff = subject;
 		tally++;
 		exec_it(subject, &heap, tally, fle);
-		free(subject);
 	}
 	free_it(heap);
 	fclose(fle);
